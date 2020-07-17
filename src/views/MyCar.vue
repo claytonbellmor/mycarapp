@@ -9,12 +9,6 @@
         max-width="500"
         v-for="car in cars" :key="car.id">
 
-          <!-- <v-list-item>
-            <v-list-item-content>
-              <v-list-item-title>Current Car</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item> -->
-
           <v-list-item two-line>
             <v-list-item-content>
               <v-list-item-title>Year</v-list-item-title>
@@ -47,32 +41,35 @@
 
     <v-row>
       <v-col>
-        <v-expansion-panels class="mx-auto" focusable style="max-width: 500px">
-          <h3 class="pb-3">Maintenance History</h3>
-          <v-expansion-panel>
-            <v-expansion-panel-header>March 2018: Purchased Car</v-expansion-panel-header>
+
+        <h3 class="pb-3">Maintenance History</h3>
+
+        <v-expansion-panels 
+          class="mx-auto" 
+          focusable 
+          style="max-width: 500px"
+        >
+
+          <v-expansion-panel
+            v-for="(entry, entryIndex) in entries"
+            :key="entryIndex"
+          >
+            <v-expansion-panel-header>
+              {{ entry.date }}
+              <v-chip-group>
+                <v-chip 
+                  class="ml-2" 
+                  :class="typeClass(entry.type)"
+                >
+                  {{ entry.type }}
+                </v-chip>
+              </v-chip-group>
+            </v-expansion-panel-header>
             <v-expansion-panel-content>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              {{ entry.body }}
             </v-expansion-panel-content>
           </v-expansion-panel>
-          <v-expansion-panel>
-            <v-expansion-panel-header>March 2018: Purchased Car</v-expansion-panel-header>
-            <v-expansion-panel-content>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-          <v-expansion-panel>
-            <v-expansion-panel-header>March 2018: Purchased Car</v-expansion-panel-header>
-            <v-expansion-panel-content>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-          <v-expansion-panel>
-            <v-expansion-panel-header>March 2018: Purchased Car</v-expansion-panel-header>
-            <v-expansion-panel-content>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </v-expansion-panel-content>
-          </v-expansion-panel>
+
         </v-expansion-panels>
       </v-col>
     </v-row>
@@ -99,14 +96,49 @@ export default {
             "car/2009-volkswagen-jetta-tdi-sedan-audio-system.png"    
           ]
         }
+      ],
+      entries: [
+        {
+          "date": "March 20 2018",
+          "type": "Maintenance",
+          "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+        },
+        {
+          "date": "June 12 2016",
+          "type": "Repair",
+          "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+        },
+        {
+          "date": "May 03 2015",
+          "type": "Repair",
+          "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+        },
+        {
+          "date": "March 20 2009",
+          "type": "Misc",
+          "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+        }
       ]
+    }
+  },
+  methods: {
+    typeClass(e) {
+      if(this.$vuetify.theme.dark) return 'thisColor'
+      if(this.$vuetify.theme.themes.light && e === 'Maintenance') return 'success'
+      if(this.$vuetify.theme.themes.light && e === 'Repair') return 'error'
+      if(this.$vuetify.theme.themes.light && e === 'Misc') return 'primary'
     }
   }
 }
 </script>
 
 <style lang="scss">
+
   .theme--dark h3 {
     color: #2196f3;
-  }  
+  }
+  .thisColor {
+    background-color: #2196f3 !important;
+  }
+
 </style>

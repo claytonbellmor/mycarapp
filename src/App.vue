@@ -1,13 +1,43 @@
 <template>
-  <NavBar />
+  <v-app>
+    <NavBar :links="links"/>
+    <v-main>
+      <router-view></router-view>
+    </v-main>
+    <Footer :links="links"/>
+  </v-app>  
 </template>
 
 <script>
 import NavBar from "@/components/NavBar.vue"
+import Footer from "@/components/Footer.vue"
 export default {
   name: 'App',
+  data () {
+    return {
+      links: [
+        {
+          label: 'My Car',
+          url: '/MyCar'
+        },
+        {
+          label: 'Garage',
+          url: '/garage'
+        },
+        {
+          label: 'Settings',
+          url: '/settings'
+        },
+        {
+          label: 'Logout',
+          url: '/logout'
+        }
+      ]
+    }
+  },
   components: {
-    NavBar
+    NavBar,
+    Footer
   }	
 }
 </script>
