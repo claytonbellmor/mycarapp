@@ -1,144 +1,361 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col>
-        <h3 class="mb-3">Current Car</h3>
+  <v-container cols="12">
+      <v-row>
+        <v-col cols="6">
+          <CurrentCar :cars="cars"/>
+        </v-col>
 
-        <v-card
-        class="mx-auto"
-        max-width="500"
-        v-for="car in cars" :key="car.id">
+        <v-col cols="6">
+          <MaintenanceHistory />
+        </v-col>
+      </v-row>      
 
-          <v-list-item two-line>
-            <v-list-item-content>
-              <v-list-item-title>Year</v-list-item-title>
-              <v-list-item-subtitle>{{ car.year }}</v-list-item-subtitle>
-            </v-list-item-content>
-            <v-list-item-content>
-              <v-list-item-title>Make</v-list-item-title>
-              <v-list-item-subtitle>{{ car.make }}</v-list-item-subtitle>
-            </v-list-item-content>
-            <v-list-item-content>
-              <v-list-item-title>Model</v-list-item-title>
-              <v-list-item-subtitle>{{ car.model }}</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
-          
-          <v-list-item two-line>
-            <v-list-item-content>
-              <v-list-item-title>Exterior</v-list-item-title>
-              <v-list-item-subtitle>{{ car.color }}</v-list-item-subtitle>
-            </v-list-item-content>
-            <v-list-item-content>
-              <v-list-item-title>Mileage</v-list-item-title>
-              <v-list-item-subtitle>{{ car.mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") }}</v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>
+      <v-row>
+        <v-col cols="12">
+          <PartsTable :cars="cars" />
+        </v-col>
+      </v-row>
 
-        </v-card>
-      </v-col>
-    </v-row>
+      <v-row>
+        <v-col cols="4">
+          <OilChange />
+        </v-col>
+        <v-col cols="8">
+          <PhotoGallery :cars="cars" />
+        </v-col>
+      </v-row>
 
-    <v-row>
-      <v-col>
-
-        <h3 class="pb-3">Maintenance History</h3>
-
-        <v-expansion-panels 
-          class="mx-auto" 
-          focusable 
-          style="max-width: 500px"
-        >
-
-          <v-expansion-panel
-            v-for="(entry, entryIndex) in entries"
-            :key="entryIndex"
-          >
-            <v-expansion-panel-header>
-              {{ entry.date }}
-              <v-chip-group>
-                <v-chip 
-                  class="ml-2" 
-                  :class="typeClass(entry.type)"
-                >
-                  {{ entry.type }}
-                </v-chip>
-              </v-chip-group>
-            </v-expansion-panel-header>
-            <v-expansion-panel-content>
-              {{ entry.body }}
-            </v-expansion-panel-content>
-          </v-expansion-panel>
-
-        </v-expansion-panels>
-      </v-col>
-    </v-row>
   </v-container>
 </template>
 
 <script>
+import cars from "../data/car.json"
+import OilChange from "@/components/OilChange.vue"
+import CurrentCar from "@/components/CurrentCar.vue"
+import MaintenanceHistory from "@/components/MaintenanceHistory.vue"
+import PartsTable from "@/components/PartsTable.vue"
+import PhotoGallery from "@/components/PhotoGallery.vue"
+
 export default {
-  data() {
-    return {   
-      cars: [
-        {
-          "make": "Volkswagen",
-          "model": "Jetta",
-          "year": 2009,
-          "color": "black",
-          "mileage": 125000,
-          "id": 1,
-          "images": [
-            "car/2009-volkswagen-jetta-s-sedan-angular-front.webp",
-            "car/2009-volkswagen-jetta-s-sedan-angular-rear.png",
-            "car/2009-volkswagen-jetta-s-sedan-engine.png",
-            "car/2009-volkswagen-jetta-s-sedan-side-view.png",
-            "car/2009-volkswagen-jetta-tdi-sedan-audio-system.png"    
-          ]
-        }
-      ],
-      entries: [
-        {
-          "date": "March 20 2018",
-          "type": "Maintenance",
-          "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
-        },
-        {
-          "date": "June 12 2016",
-          "type": "Repair",
-          "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
-        },
-        {
-          "date": "May 03 2015",
-          "type": "Repair",
-          "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
-        },
-        {
-          "date": "March 20 2009",
-          "type": "Misc",
-          "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
-        }
-      ]
-    }
+  components: {
+    OilChange,
+    CurrentCar,
+    MaintenanceHistory,
+    PartsTable,
+    PhotoGallery
   },
-  methods: {
-    typeClass(e) {
-      if(this.$vuetify.theme.dark) return 'thisColor'
-      if(this.$vuetify.theme.themes.light && e === 'Maintenance') return 'success'
-      if(this.$vuetify.theme.themes.light && e === 'Repair') return 'error'
-      if(this.$vuetify.theme.themes.light && e === 'Misc') return 'primary'
+  data() {
+    return {      
+      cars: cars
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style>  
+  /* .container {
+    outline: 1px solid cyan;
+  }
+
+  .row {
+    outline: 1px solid green;
+  }
+
+  .col {
+    outline: 1px solid red;
+  } */
 
   .theme--dark h3 {
     color: #2196f3;
   }
-  .thisColor {
+  .dark-mode-chip {
     background-color: #2196f3 !important;
+  }
+
+  .bottom-gradient {
+    background-image: linear-gradient(to top, rgba(20, 150, 250, 0.4) 0%, transparent 72px);
+  }
+
+  /* LightBox */
+
+  .vue-lb-box {
+    width: 100%;
+  }
+
+  .vue-lb-container {
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-sizing: border-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0px;
+    padding: 10px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 2000;
+    -webkit-align-items: center;
+    -moz-box-sizing: border-box;
+    -webkit-justify-content: center;
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+  }
+
+  .vue-lb-content {
+    margin-bottom: 60px;
+    max-width: 1024px;
+    position: relative;
+  }
+
+  .vue-lb-header {
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+  }
+
+  .vue-lb-button-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    top: 0px;
+    vertical-align: bottom;
+    height: 40px;
+    margin-right: -10px;
+    padding: 10px;
+    width: 40px;
+  }
+
+  .vue-lb-figure {
+    margin: 0px;
+    display: block;
+    position: relative;
+  }
+
+  img.vue-lb-modal-image {
+    cursor: pointer;
+    max-height: calc(100vh - 140px);
+    cursor: pointer;
+    display: block;
+    height: auto;
+    margin: 0 auto;
+    max-width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .vue-lb-info {
+    visibility: initial;
+    position: absolute;
+    bottom: 25px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 40px;
+    width: 100%;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: center;
+  }
+
+
+  .vue-lb-footer {
+    box-sizing: border-box;
+    color: white;
+    cursor: auto;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    left: 0px;
+    line-height: 1.3;
+    padding-bottom: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+  }
+
+  .vue-lb-footer-info {
+    display: block;
+    flex: 1 1 0;
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0;
+  }
+
+  .vue-lb-footer-count {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85em;
+    padding-left: 1em;
+  }
+
+  .vue-lb-thumbnail {
+    bottom: 10px;
+    height: 50px;
+    padding: 0 50px;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+    position: relative;
+  }
+
+  .vue-lb-modal-thumbnail {
+    background-position: center;
+    background-size: cover;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 1px hsla(0,0%,100%,.2);
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    margin: 2px;
+    overflow: hidden;
+    width: 50px;
+  }
+
+  .vue-lb-modal-thumbnail-active {
+    background-position: center;
+    background-size: cover;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 2px white;
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+    margin: 2px;
+    overflow: hidden;
+    width: 50px;
+  }
+
+  .vue-lb-thumbnail-arrow {
+    height: 54px;
+    width: 40px;
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    -webkit-touch-callout: none;
+    user-select: none;
+    height: 50px;
+    margin-top: -25px;
+    width: 30px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .vue-lb-thumbnail-left {
+    left: 10px;
+  }
+
+  .vue-lb-thumbnail-right {
+    right: 10px;
+  }
+
+  .vue-lb-arrow {
+    background: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    -webkit-touch-callout: none;
+    user-select: none;
+    height: 120px;
+    margin-top: -60px;
+    width: 40px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  .vue-lb-left {
+    left: 10px;
+  }
+
+  .vue-lb-right {
+    right: 10px;
+  }
+
+  .vue-lb-open {
+    overflow: hidden;
+  }
+
+  .vue-lb-thumbnail-wrapper {
+    bottom: 10px;
+    height: 50px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: auto;
+  }
+
+  @media (min-width: 500px) {
+    .vue-lb-thumbnail-arrow {
+      width: 40px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .vue-lb-arrow {
+        width: 70px;
+    }
+  }
+
+  .vue-lb-modal-image-transition-enter-active,
+  .vue-lb-modal-image-transition-leave-active {
+    transition: opacity .2s ease;
+  }
+
+  .vue-lb-modal-image-transition-enter,
+  .vue-lb-modal-image-transition-leave-to {
+    opacity: 0;
+  }
+
+  .vue-lb-modal-image-no-transition-enter-active,
+  .vue-lb-modal-image-no-transition-leave-active {
+    transition: none;
+  }
+
+  .vue-lb-modal-image-no-transition-enter,
+  .vue-lb-modal-image-no-transition-leave-to {
+    opacity: 0;
+  }
+
+  .vue-lb-content-transition-enter-active,
+  .vue-lb-content-transition-leave-active {
+    transition: opacity .2s ease;
+  }
+
+  .vue-lb-content-transition-enter,
+  .vue-lb-content-transition-leave-to {
+    opacity: 0;
   }
 
 </style>
