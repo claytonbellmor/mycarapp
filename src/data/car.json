@@ -1,58 +1,54 @@
-[
+[  
   {
-    "make": "Volkswagen",
-    "model": "Jetta",
-    "year": 2009,
-    "color": "black",
-    "mileage": 125000,
-    "id": 1,
+    "selectedCar": true,
+    "info": {
+        "make": "Volkswagen",
+        "model": "Jetta",
+        "year": 2009,
+        "color": "black",
+        "mileage": 125000,
+        "id": 1
+      },
     "photos": [
       {
-        "thumb": "/car/2009-volkswagen-jetta-s-sedan-angular-rear.png",
-        "src": "/car/2009-volkswagen-jetta-s-sedan-angular-rear.png",
+        "src": "/car/jetta/2009-volkswagen-jetta-s-sedan-angular-rear.png",
         "caption": "<h4>Rear</h4>"
       },
       {
-        "thumb": "/car/2009-volkswagen-jetta-s-sedan-angular-front.webp",
-        "src": "/car/2009-volkswagen-jetta-s-sedan-angular-front.webp",
+        "src": "/car/jetta/2009-volkswagen-jetta-s-sedan-angular-front.webp",
         "caption": "<h4>Front</h4>"
       },
       {
-        "thumb": "/car/2009-volkswagen-jetta-s-sedan-side-view.png",
-        "src": "/car/2009-volkswagen-jetta-s-sedan-side-view.png",
+        "src": "/car/jetta/2009-volkswagen-jetta-s-sedan-side-view.png",
         "caption": "<h4>Side View</h4>"
       },
       {
-        "thumb": "/car/2009-volkswagen-jetta-se-sedan-clutch-plate-cover.jpeg",
-        "src": "/car/2009-volkswagen-jetta-se-sedan-clutch-plate-cover.jpeg",
+        "src": "/car/jetta/2009-volkswagen-jetta-se-sedan-clutch-plate-cover.jpeg",
         "caption": "<h4>Clutch Plate Cover</h4>"
       },
       {
-        "thumb": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission.jpeg",
-        "src": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission.jpeg",
+        "src": "/car/jetta/2009-volkswagen-jetta-se-sedan-kpf-transmission.jpeg",
         "caption": "<h4>Clutch Fork with Bearing in KPF Transmission</h4>"
       },
       {
-        "thumb": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-bolt-labels.jpeg",
-        "src": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-bolt-labels.jpeg",
+        "src": "/car/jetta/2009-volkswagen-jetta-se-sedan-kpf-transmission-bolt-labels.jpeg",
         "caption": "<h4>Bolt Labels</h4>"
       },
       {
-        "thumb": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-cover.jpeg",
-        "src": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-cover.jpeg",
+        "src": "/car/jetta/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-cover.jpeg",
         "caption": "<h4>Clutch</h4>"
       },
       {
-        "thumb": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-scratch.jpeg",
-        "src": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-scratch.jpeg",
+        "src": "/car/jetta/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-scratch.jpeg",
         "caption": "<h4>Replacing KPF with original HGR transmission; not same size</h4>"
       },
       {
-        "thumb": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-damage-bellhousing.jpeg",
-        "src": "/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-damage-bellhousing.jpeg",
+        "src": "/car/jetta/2009-volkswagen-jetta-se-sedan-kpf-transmission-damage-bellhousing.jpeg",
         "caption": "<h4>Wear after 75,000 miles with replacement KPF transmission</h4>"
       }
     ],
+    "garageInfo": 
+      "car/jetta/2009-volkswagen-jetta-s-sedan-angular-front-garage.png",
     "maintenance": [
       {
         "id": 1,
@@ -168,6 +164,689 @@
         "description": "M10x70x32",
         "link": ""
       }
-    ]    
+    ],
+    "entries": [
+      {
+        "id": 1,
+        "date": "March 20 2018",
+        "type": "Maintenance",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 2,
+        "date": "June 12 2016",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 3,
+        "date": "May 03 2015",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 4,
+        "date": "March 20 2009",
+        "type": "Misc",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      }
+    ],
+    "oilChangeData": [
+      {
+        "date": "March 2020",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 125000
+      },
+      {
+        "date": "September 2019",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 112731
+      },
+      {
+        "date": "June 2019",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 102750
+      },
+      {
+        "date": "August 2018",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 88000
+      },
+      {
+        "date": "January 2018",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 54012
+      }
+    ]
+  },  
+  {
+    "selectedCar": null,
+    "info": {
+    "make": "Ford",
+    "model": "Taurus",
+    "year": 2019,
+    "color": "white",
+    "mileage": 38721,
+    "id": 2
+    },
+    "photos": [
+      {
+        "src": "car/taurus/2019-ford-taurus-front-angular-electric-blue.jpg",
+        "caption": "Electric Blue"
+      },
+      {
+        "src": "car/taurus/2019-ford-taurus-front-angular-view.webp",
+        "caption": "White Front Angular View"
+      },
+      {
+        "src": "car/taurus/2019-ford-taurus-front-factory.jpg",
+        "caption": "Fresh out the bay"
+      },
+      {
+        "src": "car/taurus/2019-ford-taurus-interior-darker.jpeg",
+        "caption": "Dark Interior"
+      },
+      {
+        "src": "car/taurus/2019-ford-taurus-interior-driver.jpeg",
+        "caption": "Drive POV"
+      }
+    ],
+    "garageInfo": 
+      "car/taurus/2019-ford-taurus-front-angular-view.webp",
+    "maintenance": [
+      {
+        "id": 1,
+        "date": "March 20 2018",
+        "type": "Maintenance",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 2,
+        "date": "June 12 2016",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 3,
+        "date": "May 03 2015",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 4,
+        "date": "March 20 2009",
+        "type": "Misc",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      }
+    ],
+    "parts": [
+      {
+        "name": "Clutch Plate and Cover",
+        "partnum": "MU722211 (03L141015P, 92703)",
+        "price": 117.79,
+        "vendor": "RockAuto",
+        "description": "For HGR/KPF transmission, includes: cover assembly, clutch disc, release bearing, Pilot bearing/bushing, alignment tool",
+        "link": ""
+      },
+      {
+        "name": "Moly",
+        "partnum": "B01BSMMJ2A",
+        "price": 7.51,
+        "vendor": "Liqui Moly",
+        "description": "Liqui Moly 2003 Mos2 100ml, Made in Germany, for bell housing and other high heat applications",
+        "link": ""
+      },
+      {
+        "name": "Axle Bearing Grease",
+        "partnum": "B000CQ4DK0",
+        "price": 7.79,
+        "vendor": "Valvoline",
+        "description": "Valvoline SynPower Synthetic 14.1oz",
+        "link": ""
+      },
+      {
+        "name": "Flange Bolt",
+        "partnum": "02J409359 (ES#272379)",
+        "price": 5.49,
+        "vendor": "ECS Tuning",
+        "description": "connects flange to drive shafts, replace every time",
+        "link": "https://www.ecstuning.com/b-genuine-volkswagen-audi-parts/bolt-priced-each/02j409359/"
+      },
+      {
+        "name": "Manual Transmission Fluid",
+        "partnum": "88900333",
+        "price": 11.08,
+        "vendor": "ACDelco",
+        "description": "ACDelco 10-4006 Synchromesh (1 quart), for transmission with brass synchronizers",
+        "link": ""
+      },
+      {
+        "name": "Flywheel Bolts",
+        "partnum": "N90665001",
+        "price": 1.59,
+        "vendor": "Anywhere",
+        "description": "Measurements: M10x1x22.3, Required (9) bolts, Recommended to replace with Loctite every time",
+        "link": ""
+      },
+      {
+        "name": "Inner CV Gasket",
+        "partnum": "8D0407309",
+        "price": 10.50,
+        "vendor": "ECS Tuning",
+        "description": "Axle gasket, replace everytime",
+        "link": ""
+      },
+      {
+        "name": "Upper Joining Bolts (engine to transmission)",
+        "partnum": "N10552402",
+        "price": 5.00,
+        "vendor": "Anywhere",
+        "description": "12mm x 1.5 x 70mm Full-Thread w/ Shoulder Flange, replace every time",
+        "link": ""
+      },
+      {
+        "name": "Upper Joining Bolts (engine to transmission)",
+        "partnum": "Universal",
+        "price": 5.00,
+        "vendor": "Anywhere",
+        "description": "14mm x 1.5 x 65mm Full-Thread w/ Shoulder Flange, Replacement for stripped tap, retapped to next size up @ 14mm",
+        "link": ""
+      },
+      {
+        "name": "Starter Mounts (engine to transmission) (2)",
+        "partnum": "N91037901",
+        "price": 4.58,
+        "vendor": "Anywhere",
+        "description": "M12 x 170mm (M8x16)",
+        "link": "https://www.ecstuning.com/b-genuine-volkswagen-audi-parts/bolt-priced-each/n91037901/"
+      },
+      {
+        "name": "Lower Joining Bolts (engine to transmission) (2)",
+        "partnum": "N90597005 (need to check fitment when package arrives)",
+        "price": 5.26,
+        "vendor": "Anywhere",
+        "description": "M10x70x32",
+        "link": ""
+      }
+    ],
+    "entries": [
+      {
+        "id": 1,
+        "date": "March 20 2018",
+        "type": "Maintenance",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 2,
+        "date": "June 12 2016",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 3,
+        "date": "May 03 2015",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 4,
+        "date": "March 20 2009",
+        "type": "Misc",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      }
+    ],
+    "oilChangeData": [
+      {
+        "date": "March 2020",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 125000
+      },
+      {
+        "date": "September 2019",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 112731
+      },
+      {
+        "date": "June 2019",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 102750
+      },
+      {
+        "date": "August 2018",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 88000
+      },
+      {
+        "date": "January 2018",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 54012
+      }
+    ]
+  },
+  {
+    "selectedCar": null,
+    "info": {
+    "make": "Toyota",
+    "model": "Prius",
+    "year": 2013,
+    "color": "blue",
+    "mileage": 85030,
+    "id": 3
+    },
+    "photos": [],
+    "garageInfo": 
+      "car/prius/2013-toyota-prius-front-angular-view.png",
+    "maintenance": [
+      {
+        "id": 1,
+        "date": "March 20 2018",
+        "type": "Maintenance",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 2,
+        "date": "June 12 2016",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 3,
+        "date": "May 03 2015",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 4,
+        "date": "March 20 2009",
+        "type": "Misc",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      }
+    ],
+    "parts": [
+      {
+        "name": "Clutch Plate and Cover",
+        "partnum": "MU722211 (03L141015P, 92703)",
+        "price": 117.79,
+        "vendor": "RockAuto",
+        "description": "For HGR/KPF transmission, includes: cover assembly, clutch disc, release bearing, Pilot bearing/bushing, alignment tool",
+        "link": ""
+      },
+      {
+        "name": "Moly",
+        "partnum": "B01BSMMJ2A",
+        "price": 7.51,
+        "vendor": "Liqui Moly",
+        "description": "Liqui Moly 2003 Mos2 100ml, Made in Germany, for bell housing and other high heat applications",
+        "link": ""
+      },
+      {
+        "name": "Axle Bearing Grease",
+        "partnum": "B000CQ4DK0",
+        "price": 7.79,
+        "vendor": "Valvoline",
+        "description": "Valvoline SynPower Synthetic 14.1oz",
+        "link": ""
+      },
+      {
+        "name": "Flange Bolt",
+        "partnum": "02J409359 (ES#272379)",
+        "price": 5.49,
+        "vendor": "ECS Tuning",
+        "description": "connects flange to drive shafts, replace every time",
+        "link": "https://www.ecstuning.com/b-genuine-volkswagen-audi-parts/bolt-priced-each/02j409359/"
+      },
+      {
+        "name": "Manual Transmission Fluid",
+        "partnum": "88900333",
+        "price": 11.08,
+        "vendor": "ACDelco",
+        "description": "ACDelco 10-4006 Synchromesh (1 quart), for transmission with brass synchronizers",
+        "link": ""
+      },
+      {
+        "name": "Flywheel Bolts",
+        "partnum": "N90665001",
+        "price": 1.59,
+        "vendor": "Anywhere",
+        "description": "Measurements: M10x1x22.3, Required (9) bolts, Recommended to replace with Loctite every time",
+        "link": ""
+      },
+      {
+        "name": "Inner CV Gasket",
+        "partnum": "8D0407309",
+        "price": 10.50,
+        "vendor": "ECS Tuning",
+        "description": "Axle gasket, replace everytime",
+        "link": ""
+      },
+      {
+        "name": "Upper Joining Bolts (engine to transmission)",
+        "partnum": "N10552402",
+        "price": 5.00,
+        "vendor": "Anywhere",
+        "description": "12mm x 1.5 x 70mm Full-Thread w/ Shoulder Flange, replace every time",
+        "link": ""
+      },
+      {
+        "name": "Upper Joining Bolts (engine to transmission)",
+        "partnum": "Universal",
+        "price": 5.00,
+        "vendor": "Anywhere",
+        "description": "14mm x 1.5 x 65mm Full-Thread w/ Shoulder Flange, Replacement for stripped tap, retapped to next size up @ 14mm",
+        "link": ""
+      },
+      {
+        "name": "Starter Mounts (engine to transmission) (2)",
+        "partnum": "N91037901",
+        "price": 4.58,
+        "vendor": "Anywhere",
+        "description": "M12 x 170mm (M8x16)",
+        "link": "https://www.ecstuning.com/b-genuine-volkswagen-audi-parts/bolt-priced-each/n91037901/"
+      },
+      {
+        "name": "Lower Joining Bolts (engine to transmission) (2)",
+        "partnum": "N90597005 (need to check fitment when package arrives)",
+        "price": 5.26,
+        "vendor": "Anywhere",
+        "description": "M10x70x32",
+        "link": ""
+      }
+    ],
+    "entries": [
+      {
+        "id": 1,
+        "date": "March 20 2018",
+        "type": "Maintenance",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 2,
+        "date": "June 12 2016",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 3,
+        "date": "May 03 2015",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 4,
+        "date": "March 20 2009",
+        "type": "Misc",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      }
+    ],
+    "oilChangeData": [
+      {
+        "date": "March 2020",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 125000
+      },
+      {
+        "date": "September 2019",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 112731
+      },
+      {
+        "date": "June 2019",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 102750
+      },
+      {
+        "date": "August 2018",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 88000
+      },
+      {
+        "date": "January 2018",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 54012
+      }
+    ]
+  },
+  {
+    "selectedCar": null,
+    "info": {
+    "make": "Rivian",
+    "model": "RT Sport",
+    "year": 2021,
+    "color": "silver",
+    "mileage": 0,
+    "id": 4
+    },
+    "photos": [],
+    "garageInfo": 
+      "car/rivian/2021-rivian-electric-front-angular-view.png",
+    "maintenance": [
+      {
+        "id": 1,
+        "date": "March 20 2018",
+        "type": "Maintenance",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 2,
+        "date": "June 12 2016",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 3,
+        "date": "May 03 2015",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 4,
+        "date": "March 20 2009",
+        "type": "Misc",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      }
+    ],
+    "parts": [
+      {
+        "name": "Clutch Plate and Cover",
+        "partnum": "MU722211 (03L141015P, 92703)",
+        "price": 117.79,
+        "vendor": "RockAuto",
+        "description": "For HGR/KPF transmission, includes: cover assembly, clutch disc, release bearing, Pilot bearing/bushing, alignment tool",
+        "link": ""
+      },
+      {
+        "name": "Moly",
+        "partnum": "B01BSMMJ2A",
+        "price": 7.51,
+        "vendor": "Liqui Moly",
+        "description": "Liqui Moly 2003 Mos2 100ml, Made in Germany, for bell housing and other high heat applications",
+        "link": ""
+      },
+      {
+        "name": "Axle Bearing Grease",
+        "partnum": "B000CQ4DK0",
+        "price": 7.79,
+        "vendor": "Valvoline",
+        "description": "Valvoline SynPower Synthetic 14.1oz",
+        "link": ""
+      },
+      {
+        "name": "Flange Bolt",
+        "partnum": "02J409359 (ES#272379)",
+        "price": 5.49,
+        "vendor": "ECS Tuning",
+        "description": "connects flange to drive shafts, replace every time",
+        "link": "https://www.ecstuning.com/b-genuine-volkswagen-audi-parts/bolt-priced-each/02j409359/"
+      },
+      {
+        "name": "Manual Transmission Fluid",
+        "partnum": "88900333",
+        "price": 11.08,
+        "vendor": "ACDelco",
+        "description": "ACDelco 10-4006 Synchromesh (1 quart), for transmission with brass synchronizers",
+        "link": ""
+      },
+      {
+        "name": "Flywheel Bolts",
+        "partnum": "N90665001",
+        "price": 1.59,
+        "vendor": "Anywhere",
+        "description": "Measurements: M10x1x22.3, Required (9) bolts, Recommended to replace with Loctite every time",
+        "link": ""
+      },
+      {
+        "name": "Inner CV Gasket",
+        "partnum": "8D0407309",
+        "price": 10.50,
+        "vendor": "ECS Tuning",
+        "description": "Axle gasket, replace everytime",
+        "link": ""
+      },
+      {
+        "name": "Upper Joining Bolts (engine to transmission)",
+        "partnum": "N10552402",
+        "price": 5.00,
+        "vendor": "Anywhere",
+        "description": "12mm x 1.5 x 70mm Full-Thread w/ Shoulder Flange, replace every time",
+        "link": ""
+      },
+      {
+        "name": "Upper Joining Bolts (engine to transmission)",
+        "partnum": "Universal",
+        "price": 5.00,
+        "vendor": "Anywhere",
+        "description": "14mm x 1.5 x 65mm Full-Thread w/ Shoulder Flange, Replacement for stripped tap, retapped to next size up @ 14mm",
+        "link": ""
+      },
+      {
+        "name": "Starter Mounts (engine to transmission) (2)",
+        "partnum": "N91037901",
+        "price": 4.58,
+        "vendor": "Anywhere",
+        "description": "M12 x 170mm (M8x16)",
+        "link": "https://www.ecstuning.com/b-genuine-volkswagen-audi-parts/bolt-priced-each/n91037901/"
+      },
+      {
+        "name": "Lower Joining Bolts (engine to transmission) (2)",
+        "partnum": "N90597005 (need to check fitment when package arrives)",
+        "price": 5.26,
+        "vendor": "Anywhere",
+        "description": "M10x70x32",
+        "link": ""
+      }
+    ],
+    "entries": [
+      {
+        "id": 1,
+        "date": "March 20 2018",
+        "type": "Maintenance",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 2,
+        "date": "June 12 2016",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 3,
+        "date": "May 03 2015",
+        "type": "Repair",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      },
+      {
+        "id": 4,
+        "date": "March 20 2009",
+        "type": "Misc",
+        "body": "Nihil tenetur numquam nihil ad dignissimos sapiente. Voluptatem officiis asperiores. Qui maxime iusto omnis dolorem quidem. Numquam quia minus accusamus et in rerum provident. Odio id nihil ducimus similique. Voluptatem ea dolorem ratione impedit."
+      }
+    ],
+    "oilChangeData": [
+      {
+        "date": "March 2020",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 125000
+      },
+      {
+        "date": "September 2019",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 112731
+      },
+      {
+        "date": "June 2019",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 102750
+      },
+      {
+        "date": "August 2018",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 88000
+      },
+      {
+        "date": "January 2018",
+        "summary": "Oil Change",
+        "quantity": 5,
+        "units": "quarts",
+        "additives": "Lucas Oil",
+        "mileage": 54012
+      }
+    ]
   }
 ]

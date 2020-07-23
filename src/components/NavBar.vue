@@ -26,7 +26,12 @@
 
 <script>
   export default {
-  props: ['links'],
+  props: {
+    links: {
+      type: Array,
+      required: true
+    }
+  },
     data() {
       return {                
       }

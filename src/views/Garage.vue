@@ -1,53 +1,72 @@
 <template>
   <v-container>
     <h1>Garage</h1>
-    <v-row>
-      <v-col cols="4" v-for="car in cars" :key="car.id">
-        <v-card class="px-5">
-          {{ car.model }}
-          <div v-if="car.images">
-            <img :src="car.images[0]" alt="" width="120">
-          </div>
-        </v-card>
+    <v-row
+      cols="12"
+    >
+      <v-col
+        v-for="(car, index) in cars"
+        :key="index"
+        lg="3"
+        offset-md="0"
+        md="4"
+        cols="6"
+        offset-sm="3"
+      >
+        <v-hover
+          v-slot:default="{ hover }"
+          style="cursor: pointer"
+        >
+          <v-card
+            :elevation="hover ? 16 : 2"
+          >
+            <v-row>
+              <v-col cols="12">
+                <h3>{{ car.info.model }}</h3>
+              </v-col>
+              <v-col>
+                <v-template v-if="car.garageInfo">
+                  <v-img
+                    :src="car.garageInfo"
+                    :alt="car.info.model"
+                    height="150"
+                    contain
+                  ></v-img>
+                </v-template>
+              </v-col>
+            </v-row>
+          </v-card>
+          </v-hover>
       </v-col>
+
+      <v-col
+        lg="3"
+        md="4"
+        offset-md="0"
+        sm="3"
+        offset-sm="2"
+      >
+        <v-card
+          outlined
+          height="225"
+          class="d-flex align-center justify-center blue lighten-3"
+        >
+          <v-btn>Add New Vehicle</v-btn>
+        </v-card>
+
+      </v-col>
+
     </v-row>
   </v-container>
 </template>
 
 <script>
+import cars from "../data/car.json"
 
 export default {
   data() {
     return {
-      cars: [
-        {
-          "make": "Volkswagen",
-          "model": "Jetta",
-          "year": 2009,
-          "color": "black",
-          "mileage": 125000,
-          "id": 1,
-          "images": [
-            "car/2009-volkswagen-jetta-s-sedan-angular-front.webp",
-            "car/2009-volkswagen-jetta-s-sedan-angular-rear.png",
-            "car/2009-volkswagen-jetta-s-sedan-engine.png",
-            "car/2009-volkswagen-jetta-s-sedan-side-view.png",
-            "car/2009-volkswagen-jetta-tdi-sedan-audio-system.png"    
-          ]
-        },
-        {
-          "model": "Taurus",
-          "id": 2
-        },
-        {
-          "model": "Prius",
-          "id": 3
-        },
-        {
-          "model": "Jeep",
-          "id": 4
-        }
-      ]
+      cars: cars
     }
   }
 }

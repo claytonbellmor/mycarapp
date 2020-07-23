@@ -1,14 +1,28 @@
 <template>
-  <v-container cols="12">
+  <v-container>
       <v-row>
-        <v-col cols="6">
+        <v-col lg="6" md="12">
           <CurrentCar :cars="cars"/>
         </v-col>
-
-        <v-col cols="6">
-          <MaintenanceHistory />
+        <v-col lg="6" md="12">
+          <MaintenanceHistory :cars="cars"/>
         </v-col>
       </v-row>      
+
+        <v-row>
+          <v-col 
+            v-for="(car, index) in cars" 
+            :key="index"
+            cols="12"
+          >
+            <template v-if="car.selectedCar!=null">            
+              <v-parallax 
+                :src="car.garageInfo"
+                height="250"  
+              ></v-parallax>
+            </template>
+          </v-col>
+        </v-row>
 
       <v-row>
         <v-col cols="12">
@@ -17,10 +31,10 @@
       </v-row>
 
       <v-row>
-        <v-col cols="4">
-          <OilChange />
+        <v-col lg="6" md="12">
+          <OilChange :cars="cars" />
         </v-col>
-        <v-col cols="8">
+        <v-col lg="6" md="12">
           <PhotoGallery :cars="cars" />
         </v-col>
       </v-row>
@@ -30,16 +44,16 @@
 
 <script>
 import cars from "../data/car.json"
-import OilChange from "@/components/OilChange.vue"
 import CurrentCar from "@/components/CurrentCar.vue"
+import OilChange from "@/components/OilChange.vue"
 import MaintenanceHistory from "@/components/MaintenanceHistory.vue"
 import PartsTable from "@/components/PartsTable.vue"
 import PhotoGallery from "@/components/PhotoGallery.vue"
 
 export default {
   components: {
-    OilChange,
     CurrentCar,
+    OilChange,
     MaintenanceHistory,
     PartsTable,
     PhotoGallery

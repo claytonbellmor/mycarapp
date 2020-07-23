@@ -1,89 +1,57 @@
 <template>
   <div>
     <h3 class="pb-3">Oil Change Log</h3>
-    <v-timeline>
+    <v-timeline
+      v-for="car in cars"
+      :key="car.id"
+    >
+      <span v-for="entry in car.oilChangeData" :key="entry.date">
         <v-timeline-item
-          v-for="(data, dataIndex) in oilChangeData"
-          :key="dataIndex"
+          v-if="car.selectedCar!=null"          
           right
         >
-          <div slot="opposite">{{ data.date }}</div>
-          <div slot="opposite"><strong>@ {{ data.mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") }}</strong></div>
+          <div slot="opposite">{{ entry.date }}</div>
+          <div slot="opposite"><strong>@ {{ car.info.mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") }}</strong></div>
           <v-card class="elevation-2" width="max-content" style="text-align: left;">
             <v-card-text>
 
               <v-row>
                 <v-col>
-                  <strong>Amount:</strong> {{ data.quantity + ' ' + data.units }}
+                  <strong>Amount:</strong> {{ entry.quantity + ' ' + entry.units }}
                 </v-col>
               </v-row>
 
-              <v-row v-if="data.additives">
+              <v-row v-if="entry.additives">
                 <v-col>
-                  <strong>Additives Used:</strong> {{ data.additives }}
+                  <strong>Additives Used:</strong> {{ entry.additives }}
                 </v-col>
               </v-row>
 
               <v-row>
                 <v-col>
-                  <strong>Next Change:</strong> {{ nextMileage(data.mileage) }} miles
+                  <strong>Next Change:</strong> {{ nextMileage(entry.mileage) }} miles
                 </v-col>
               </v-row>
 
             </v-card-text>
           </v-card>
         </v-timeline-item>
-      </v-timeline>
+      </span>
+    </v-timeline>
   </div>    
 </template>
 
 <script>
 export default {
   name: 'OilChange',
+  props: {
+    cars: {
+      type: Array,
+      required: true
+    }
+  },
   data() {
     return {
-      oilChangeData: [
-        {
-          "date": "March 2020",
-          "summary": "Oil Change",
-          "quantity": 5,
-          "units": "quarts",
-          "additives": "Lucas Oil",
-          "mileage": 125000
-        },
-        {
-          "date": "September 2019",
-          "summary": "Oil Change",
-          "quantity": 5,
-          "units": "quarts",
-          "additives": "Lucas Oil",
-          "mileage": 112731
-        },
-        {
-          "date": "June 2019",
-          "summary": "Oil Change",
-          "quantity": 5,
-          "units": "quarts",
-          "additives": "Lucas Oil",
-          "mileage": 102750
-        },
-        {
-          "date": "August 2018",
-          "summary": "Oil Change",
-          "quantity": 5,
-          "units": "quarts",
-          "additives": "Lucas Oil",
-          "mileage": 88000
-        },
-        {
-          "date": "January 2018",
-          "summary": "Oil Change",
-          "quantity": 5,
-          "units": "quarts",
-          "additives": "Lucas Oil",
-          "mileage": 54012
-        }
-      ]
     }
   },
   methods: {

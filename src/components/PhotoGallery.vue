@@ -1,43 +1,46 @@
 <template>
   <div>
     <h3 class="mb-3">Photos</h3>
-    <v-card>
-      <v-container fluid>
-        <v-row>
-          <v-col 
-            class="d-flex child-flex"
+    <v-card
+      v-for="(car, index) in cars"
+      :key="index"
+    >
+      <v-container v-if="car.selectedCar!=null">
+        <v-row 
+          cols="12"
+        >
+          <v-col
             cols="4"
-            v-for="(image, imageSource, index) in cars"
+            v-for="(photo, index) in car.photos"
             :key="index"
           >
-            <v-card 
+            <v-card
               flat 
               tile 
-              class="d-flex grey"            
-            >
+              class="d-flex child-flex grey"
+            >            
               <v-img
-                :src="image.src"
+                :src="photo.src"                
                 aspect-ratio="1"
                 @click="openGallery(index)"
               >
-                <div class="fill-height bottom-gradient"></div>
+              <div class="fill-height bottom-gradient">
+              </div>
               </v-img>
-              
-              <template v-slot:placeholder>
-                <v-row
-                  class="fill-height ma-0"
-                  align="center"
-                  justify="center"
-                >
-                  <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                </v-row>
-              </template>
-              
-            </v-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-card>
+            <template v-slot:placeholder>
+              <v-row
+                class="fill-height ma-0"
+                align="center"
+                justify="center"
+              >
+                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+              </v-row>
+            </template>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card>
     
     <LightBox
     ref="lightbox"
@@ -55,6 +58,12 @@ import LightBox from 'vue-image-lightbox'
 export default {
   components: {
     LightBox
+  },
+  props: {
+    cars: {
+      type: Array,
+      required: true
+    }
   },
   data() {
     return {
