@@ -1,53 +1,56 @@
 <template>
   <div>
-    <h3 class="mb-3">Photos</h3>
-    <v-card
-      v-for="(car, index) in cars"
+      <h3 class="mb-3">Photos</h3>
+      <v-card
+      v-for="(cars, index) in garage"
       :key="index"
-    >
+      >
+      <span v-for="car in cars" :key="car.id">
       <v-container v-if="car.selectedCar!=null">
-        <v-row 
-          cols="12"
-        >
-          <v-col
-            cols="4"
-            v-for="(photo, index) in car.photos"
-            :key="index"
-          >
-            <v-card
-              flat 
-              tile 
-              class="d-flex child-flex grey"
-            >            
-              <v-img
-                :src="photo.src"                
-                aspect-ratio="1"
-                @click="openGallery(index)"
-              >
-              <div class="fill-height bottom-gradient">
-              </div>
-              </v-img>
-            <template v-slot:placeholder>
-              <v-row
-                class="fill-height ma-0"
-                align="center"
-                justify="center"
-              >
-                <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-              </v-row>
-            </template>
-          </v-card>
-        </v-col>
+      <v-row 
+      cols="12"
+      >
+      <v-col
+      cols="4"
+      v-for="(photo, index) in car.photos"
+      :key="index"
+      >
+      <v-card
+      flat 
+      tile 
+      class="d-flex child-flex grey"
+      >            
+      <v-img
+      :src="photo.src"                
+      aspect-ratio="1"
+      @click="openGallery(index)"
+      >
+      <div class="fill-height bottom-gradient">
+      </div>
+      </v-img>
+      <template v-slot:placeholder>
+      <v-row
+      class="fill-height ma-0"
+      align="center"
+      justify="center"
+      >
+      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
       </v-row>
-    </v-container>
-  </v-card>
-    
+      </template>
+      </v-card>
+      </v-col>
+      </v-row>
+      </v-container>
+      </span>
+      </v-card>
+
+          
     <LightBox
-    ref="lightbox"
-    :media="media"
-    :show-caption="true"
-    :show-light-box="false"
-    />
+      ref="lightbox"
+      :media="media"
+      :show-caption="true"
+      :show-light-box="false"
+    />      
 
   </div>
 </template>
@@ -56,75 +59,24 @@
 import LightBox from 'vue-image-lightbox'
 
 export default {
-  components: {
-    LightBox
-  },
   props: {
-    cars: {
-      type: Array,
+    garage: {
+      type: Object,
       required: true
     }
   },
   data() {
     return {
       media: [
-        {
-          thumb: '/car/2009-volkswagen-jetta-s-sedan-angular-rear.png',
-          src: '/car/2009-volkswagen-jetta-s-sedan-angular-rear.png',
-          caption: '<h4>Rear</h4>'
-        },
-        {
-          thumb: '/car/2009-volkswagen-jetta-s-sedan-angular-front.webp',
-          src: '/car/2009-volkswagen-jetta-s-sedan-angular-front.webp',
-          caption: '<h4>Front</h4>'
-        },
-        {
-          thumb: '/car/2009-volkswagen-jetta-s-sedan-side-view.png',
-          src: '/car/2009-volkswagen-jetta-s-sedan-side-view.png',
-          caption: '<h4>Side View</h4>'
-        },
-        {
-          thumb: '/car/2009-volkswagen-jetta-se-sedan-clutch-plate-cover.jpeg',
-          src: '/car/2009-volkswagen-jetta-se-sedan-clutch-plate-cover.jpeg',
-          caption: '<h4>Clutch Plate Cover</h4>'
-        },
-        {
-          thumb: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission.jpeg',
-          src: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission.jpeg',
-          caption: '<h4>Clutch Fork with Bearing in KPF Transmission</h4>'
-        },
-        {
-          thumb: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-bolt-labels.jpeg',
-          src: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-bolt-labels.jpeg',
-          caption: '<h4>Bolt Labels</h4>'
-        },
-        {
-          thumb: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-cover.jpeg',
-          src: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-cover.jpeg',
-          caption: '<h4>Clutch</h4>'
-        },
-        {
-          thumb: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-scratch.jpeg',
-          src: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-clutch-scratch.jpeg',
-          caption: '<h4>Replacing KPF with original HGR transmission; not same size</h4>'
-        },
-        {
-          thumb: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-damage-bellhousing.jpeg',
-          src: '/car/2009-volkswagen-jetta-se-sedan-kpf-transmission-damage-bellhousing.jpeg',
-          caption: '<h4>Wear after 75,000 miles with replacement KPF transmission</h4>'
-        }
-        // {
-        //   thumb: '/car/2009-volkswagen-jetta-s-sedan-angular-rear.png',
-        //   src: '/car/2009-volkswagen-jetta-tdi-sedan-audio-system.png',
-        //   caption: '<h4>Audio System</h4>'
-        // },
-        // {
-        //   thumb: '/car/2009-volkswagen-jetta-s-sedan-engine.png',
-        //   src: '/car/2009-volkswagen-jetta-s-sedan-engine.png',
-        //   caption: '<h4>Engine</h4>'
-        // }
+        
       ]
     }
+  },
+  computed: {
+
+  },
+  components: {
+    LightBox
   },
   methods: {
     openGallery(index) {
@@ -133,7 +85,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

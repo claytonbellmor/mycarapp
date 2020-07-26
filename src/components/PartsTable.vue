@@ -1,35 +1,37 @@
 <template>
   <div>
-    <div v-for="(car, index) in cars" :key="index">
-      <div v-if="car.selectedCar!=null">
-      <h3 class="mb-3">{{ car.info.year + " " + car.info.make + " " + car.info.model }} Parts</h3>    
-        <v-card>
-          <v-card-title>
-            <v-text-field
-              v-model="search"
-              append-icon="search"
-              label="Search"
-              single-line
-              hide-details
-            ></v-text-field>
-          </v-card-title>
-          <v-data-table
-            height="400"
-            :headers="headers"
-            :items="car.parts"
-            :search="search"
-          ></v-data-table>
-        </v-card>
-      </div>
-    </div>
+    <span v-for="(cars, index) in garage" :key="index">
+      <span v-for="(car, index) in cars" :key="index">
+        <span v-if="car.selectedCar!=null">
+          <h3 class="mb-3">{{ car.info.year + " " + car.info.make + " " + car.info.model }} Parts</h3>    
+          <v-card>
+            <v-card-title>
+              <v-text-field
+                v-model="search"
+                append-icon="search"
+                label="Search"
+                single-line
+                hide-details
+              ></v-text-field>
+            </v-card-title>
+            <v-data-table
+              height="400"
+              :headers="headers"
+              :items="car.parts"
+              :search="search"
+            ></v-data-table>
+          </v-card>
+        </span>
+      </span>
+    </span>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    cars: {
-      type: Array,
+    garage: {
+      type: Object,
       required: true
     }
   },

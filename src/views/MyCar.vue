@@ -2,83 +2,73 @@
   <v-container>
       <v-row>
         <v-col lg="6" md="12">
-          <CurrentCar :cars="cars"/>
+          <CurrentCar :garage="garage"/>
         </v-col>
         <v-col lg="6" md="12">
-          <MaintenanceHistory :cars="cars"/>
+          <MaintenanceHistory :garage="garage"/>
         </v-col>
       </v-row>      
 
-        <v-row>
-          <v-col 
-            v-for="(car, index) in cars" 
-            :key="index"
-            cols="12"
-          >
-            <template v-if="car.selectedCar!=null">            
-              <v-parallax 
-                :src="car.garageInfo"
-                height="250"  
-              ></v-parallax>
-            </template>
-          </v-col>
-        </v-row>
+      <v-row
+        v-for="(cars, index) in garage" 
+        :key="index"
+      >
+        <v-col 
+          v-for="(car, index) in cars" 
+          :key="index"
+          cols="12"
+        >
+          <template v-if="car.selectedCar!=null">            
+            <v-parallax 
+              :src="car.garageInfo"
+              height="250"  
+            ></v-parallax>
+          </template>
+        </v-col>
+      </v-row>
 
       <v-row>
         <v-col cols="12">
-          <PartsTable :cars="cars" />
+          <PartsTable :garage="garage" />
         </v-col>
       </v-row>
 
       <v-row>
         <v-col lg="6" md="12">
-          <OilChange :cars="cars" />
+          <OilChange :garage="garage" />
         </v-col>
         <v-col lg="6" md="12">
-          <PhotoGallery :cars="cars" />
+          <PhotoGallery :garage="garage" />
         </v-col>
       </v-row>
-
   </v-container>
 </template>
 
 <script>
-import cars from "../data/car.json"
+import garage from "../data/garage.json"
 import CurrentCar from "@/components/CurrentCar.vue"
-import OilChange from "@/components/OilChange.vue"
 import MaintenanceHistory from "@/components/MaintenanceHistory.vue"
+import OilChange from "@/components/OilChange.vue"
 import PartsTable from "@/components/PartsTable.vue"
 import PhotoGallery from "@/components/PhotoGallery.vue"
 
 export default {
   components: {
     CurrentCar,
-    OilChange,
     MaintenanceHistory,
+    OilChange,
     PartsTable,
     PhotoGallery
   },
   data() {
     return {      
-      cars: cars
+      garage: garage
     }
   }
 }
 </script>
 
 <style>  
-  /* .container {
-    outline: 1px solid cyan;
-  }
-
-  .row {
-    outline: 1px solid green;
-  }
-
-  .col {
-    outline: 1px solid red;
-  } */
-
   .theme--dark h3 {
     color: #2196f3;
   }

@@ -2,9 +2,10 @@
   <div>
     <h3 class="pb-3">Oil Change Log</h3>
     <v-timeline
-      v-for="car in cars"
-      :key="car.id"
+      v-for="cars in garage"
+      :key="cars.id"
     >
+    <span v-for="car in cars" :key="car.id">
       <span v-for="entry in car.oilChangeData" :key="entry.date">
         <v-timeline-item
           v-if="car.selectedCar!=null"          
@@ -37,6 +38,7 @@
           </v-card>
         </v-timeline-item>
       </span>
+      </span>
     </v-timeline>
   </div>    
 </template>
@@ -45,13 +47,9 @@
 export default {
   name: 'OilChange',
   props: {
-    cars: {
-      type: Array,
+    garage: {
+      type: Object,
       required: true
-    }
-  },
-  data() {
-    return {
     }
   },
   methods: {
