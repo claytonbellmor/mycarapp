@@ -20,3 +20,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+dist/index.html
+dist/js/app.966bfc71.js
+dist/js/app.966bfc71.js.map
