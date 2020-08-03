@@ -8,17 +8,17 @@ Vue.use(VueRouter)
 
   const routes = [
   {
-    path: '/mycarapp/',
+    path: '/',
     name: 'Dashboard',
     component: Dashboard
   },
   {
-    path: '/mycarapp/mycar',
+    path: '/mycar',
     name: 'MyCar',
     component: MyCar
   },
   {
-    path: '/mycarapp/garage',
+    path: '/garage',
     name: 'Garage',
     component: Garage
   }
