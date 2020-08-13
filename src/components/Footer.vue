@@ -11,9 +11,9 @@
         :to="link.url"
       >
         {{ link.label }}
-      </v-btn>				
+      </v-btn>
       <v-flex primary lighten-2 py-4 text-center white--text xs12>
-        {{ new Date().getFullYear() }} — <strong>Vuetify Dashboard</strong>
+        {{ new Date().getFullYear() }} — <strong>Clayton Bellmor</strong>
       </v-flex>
     </v-layout>
   </v-footer>
@@ -24,8 +24,8 @@ export default {
   props: {
     links: {
       type: Array,
-      required: true
-    }
-  }
-}
+      required: true,
+    },
+  },
+};
 </script>

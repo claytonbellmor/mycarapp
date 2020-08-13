@@ -3,13 +3,13 @@
     {
       "selectedCar": true,
       "info": {
-          "make": "Volkswagen",
-          "model": "Jetta",
-          "year": 2009,
-          "color": "black",
-          "mileage": 125000,
-          "id": 1
-        },
+        "make": "Volkswagen",
+        "model": "Jetta",
+        "year": 2009,
+        "color": "black",
+        "mileage": 125000,
+        "id": 1
+      },
       "photos": [
         {
           "src": "/car/jetta/2009-volkswagen-jetta-s-sedan-angular-rear.png",
@@ -127,7 +127,7 @@
         {
           "name": "Inner CV Gasket",
           "partnum": "8D0407309",
-          "price": 10.50,
+          "price": 10.5,
           "vendor": "ECS Tuning",
           "description": "Axle gasket, replace everytime",
           "link": ""
@@ -135,7 +135,7 @@
         {
           "name": "Upper Joining Bolts (engine to transmission)",
           "partnum": "N10552402",
-          "price": 5.00,
+          "price": 5.0,
           "vendor": "Anywhere",
           "description": "12mm x 1.5 x 70mm Full-Thread w/ Shoulder Flange, replace every time",
           "link": ""
@@ -143,7 +143,7 @@
         {
           "name": "Upper Joining Bolts (engine to transmission)",
           "partnum": "Universal",
-          "price": 5.00,
+          "price": 5.0,
           "vendor": "Anywhere",
           "description": "14mm x 1.5 x 65mm Full-Thread w/ Shoulder Flange, Replacement for stripped tap, retapped to next size up @ 14mm",
           "link": ""
@@ -237,21 +237,21 @@
     {
       "selectedCar": null,
       "info": {
-      "make": "Ford",
-      "model": "Taurus",
-      "year": 2019,
-      "color": "white",
-      "mileage": 38721,
-      "id": 2
+        "make": "Ford",
+        "model": "Taurus",
+        "year": 2019,
+        "color": "white",
+        "mileage": 38721,
+        "id": 2
       },
       "photos": [
         {
-          "src": "car/taurus/2019-ford-taurus-front-angular-electric-blue.jpg",
-          "caption": "Electric Blue"
+          "src": "car/taurus/2019-ford-taurus-front-angular-view.png",
+          "caption": "White Front Angular View"
         },
         {
-          "src": "car/taurus/2019-ford-taurus-front-angular-view.webp",
-          "caption": "White Front Angular View"
+          "src": "car/taurus/2019-ford-taurus-front-angular-electric-blue.jpg",
+          "caption": "Electric Blue"
         },
         {
           "src": "car/taurus/2019-ford-taurus-front-factory.jpg",
@@ -266,8 +266,7 @@
           "caption": "Drive POV"
         }
       ],
-      "garageInfo": 
-        "car/taurus/2019-ford-taurus-front-angular-view.webp",
+      "garageInfo": "car/taurus/2019-ford-taurus-front-angular-view.png",
       "maintenance": [
         {
           "id": 1,
@@ -346,7 +345,7 @@
         {
           "name": "Inner CV Gasket",
           "partnum": "8D0407309",
-          "price": 10.50,
+          "price": 10.5,
           "vendor": "ECS Tuning",
           "description": "Axle gasket, replace everytime",
           "link": ""
@@ -354,7 +353,7 @@
         {
           "name": "Upper Joining Bolts (engine to transmission)",
           "partnum": "N10552402",
-          "price": 5.00,
+          "price": 5.0,
           "vendor": "Anywhere",
           "description": "12mm x 1.5 x 70mm Full-Thread w/ Shoulder Flange, replace every time",
           "link": ""
@@ -362,7 +361,7 @@
         {
           "name": "Upper Joining Bolts (engine to transmission)",
           "partnum": "Universal",
-          "price": 5.00,
+          "price": 5.0,
           "vendor": "Anywhere",
           "description": "14mm x 1.5 x 65mm Full-Thread w/ Shoulder Flange, Replacement for stripped tap, retapped to next size up @ 14mm",
           "link": ""
@@ -456,16 +455,15 @@
     {
       "selectedCar": null,
       "info": {
-      "make": "Toyota",
-      "model": "Prius",
-      "year": 2013,
-      "color": "blue",
-      "mileage": 85030,
-      "id": 3
+        "make": "Toyota",
+        "model": "Prius",
+        "year": 2013,
+        "color": "blue",
+        "mileage": 85030,
+        "id": 3
       },
       "photos": [],
-      "garageInfo": 
-        "car/prius/2013-toyota-prius-front-angular-view.png",
+      "garageInfo": "car/prius/2013-toyota-prius-front-angular-view.png",
       "maintenance": [
         {
           "id": 1,
@@ -544,7 +542,7 @@
         {
           "name": "Inner CV Gasket",
           "partnum": "8D0407309",
-          "price": 10.50,
+          "price": 10.5,
           "vendor": "ECS Tuning",
           "description": "Axle gasket, replace everytime",
           "link": ""
@@ -552,7 +550,7 @@
         {
           "name": "Upper Joining Bolts (engine to transmission)",
           "partnum": "N10552402",
-          "price": 5.00,
+          "price": 5.0,
           "vendor": "Anywhere",
           "description": "12mm x 1.5 x 70mm Full-Thread w/ Shoulder Flange, replace every time",
           "link": ""
@@ -560,7 +558,7 @@
         {
           "name": "Upper Joining Bolts (engine to transmission)",
           "partnum": "Universal",
-          "price": 5.00,
+          "price": 5.0,
           "vendor": "Anywhere",
           "description": "14mm x 1.5 x 65mm Full-Thread w/ Shoulder Flange, Replacement for stripped tap, retapped to next size up @ 14mm",
           "link": ""
@@ -654,16 +652,15 @@
     {
       "selectedCar": null,
       "info": {
-      "make": "Rivian",
-      "model": "RT Sport",
-      "year": 2021,
-      "color": "silver",
-      "mileage": 0,
-      "id": 4
+        "make": "Rivian",
+        "model": "RT Sport",
+        "year": 2021,
+        "color": "silver",
+        "mileage": 0,
+        "id": 4
       },
       "photos": [],
-      "garageInfo": 
-        "car/rivian/2021-rivian-electric-front-angular-view.png",
+      "garageInfo": "car/rivian/2021-rivian-electric-front-angular-view.png",
       "maintenance": [
         {
           "id": 1,
@@ -742,7 +739,7 @@
         {
           "name": "Inner CV Gasket",
           "partnum": "8D0407309",
-          "price": 10.50,
+          "price": 10.5,
           "vendor": "ECS Tuning",
           "description": "Axle gasket, replace everytime",
           "link": ""
@@ -750,7 +747,7 @@
         {
           "name": "Upper Joining Bolts (engine to transmission)",
           "partnum": "N10552402",
-          "price": 5.00,
+          "price": 5.0,
           "vendor": "Anywhere",
           "description": "12mm x 1.5 x 70mm Full-Thread w/ Shoulder Flange, replace every time",
           "link": ""
@@ -758,7 +755,7 @@
         {
           "name": "Upper Joining Bolts (engine to transmission)",
           "partnum": "Universal",
-          "price": 5.00,
+          "price": 5.0,
           "vendor": "Anywhere",
           "description": "14mm x 1.5 x 65mm Full-Thread w/ Shoulder Flange, Replacement for stripped tap, retapped to next size up @ 14mm",
           "link": ""
