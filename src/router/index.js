@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import Dashboard from "@/views/Dashboard.vue";
 import Garage from "@/views/Garage.vue";
 import MyCar from "@/views/MyCar.vue";
 
@@ -8,8 +9,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    name: "Garage",
-    component: Garage,
+    name: "Dashboard",
+    component: Dashboard,
   },
   {
     path: "/mycar",
