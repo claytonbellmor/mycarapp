@@ -37,23 +37,6 @@
           </v-card>
         </v-hover>
       </v-col>
-
-      <!-- <v-col
-        lg="3"
-        md="4"
-        offset-md="0"
-        sm="3"
-        offset-sm="2"
-      >
-        <v-card
-          outlined
-          height="225"
-          class="d-flex align-center justify-center blue lighten-3"
-        >
-          <v-btn>Add New Vehicle</v-btn>
-        </v-card>
-
-      </v-col> -->
     </v-row>
   </v-container>
 </template>
